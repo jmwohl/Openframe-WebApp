@@ -3,7 +3,8 @@
 import React, { Component, PropTypes } from 'react';
 import onClickOutside from 'react-onclickoutside';
 
-import SidebarFrameItemComponent from './SidebarFrameItemComponent'
+import SidebarFrameItemComponent from './SidebarFrameItemComponent';
+import NewFrameContainer from '../../containers/frame/NewFrameContainer';
 
 require('styles//sidebar/Sidebar.scss');
 
@@ -48,6 +49,8 @@ class SidebarComponent extends Component {
                   selectFrame={selectFrame}
                   pathname={location.pathname} />
     		    	)}
+
+              <NewFrameContainer />
     		    </ul>
           </div>
           <div className="sidebar-header">

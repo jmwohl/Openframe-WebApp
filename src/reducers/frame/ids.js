@@ -8,6 +8,7 @@ import { uniq } from 'lodash';
 import {
   FETCH_FRAMES_SUCCESS,
   FRAME_UPDATED,
+  PAIR_FRAME_SUCCESS,
   DELETE_FRAME_SUCCESS,
   REMOVE_FROM_FRAME_SUCCESS,
   LOGOUT_REQUEST
@@ -28,7 +29,8 @@ export default function(state = initialState, action) {
     }
 
     // Single artwork... push onto state and make sure entries are unique
-    case FRAME_UPDATED: {
+    case FRAME_UPDATED:
+    case PAIR_FRAME_SUCCESS: {
       let ids = [
         ...state,
         action.response.result

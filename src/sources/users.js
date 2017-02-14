@@ -120,6 +120,10 @@ const users = {
     return fetchJSON(`${modelPrefix}/${userId}/all_frames`);
   },
 
+  pairFrame: function(pairingCode, userId = 'current') {
+    return fetchJSON(`${modelPrefix}/${userId}/pair/${pairingCode}`, { method: 'PUT' });
+  },
+
   /**
    * Fetch a collection
    * @param  {String} collectionId Collection id (optional, defaults to primary collection)
@@ -187,7 +191,9 @@ const users = {
 
   passwordReset: function(email) {
     return fetchJSON(`${modelPrefix}/reset`, { method: 'POST', data: { email }});
-  }
+  },
+
+
 };
 
 export default users;

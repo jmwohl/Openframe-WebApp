@@ -26,6 +26,7 @@ import {
   UPDATE_NOTICE_BANNER,
   UPDATE_VISIBLE_MODAL,
   UPDATE_SIDEBAR_STATE,
+  UPDATE_PAIR_UI_STATE,
 
   FIX_BODY,
   UNFIX_BODY
@@ -38,6 +39,7 @@ const initialState = {
   visibleModal: null,
   modalError: null,
   fixBody: false,
+  showAddFrameInput: false,
   // notice: {
   //   message: 'Where\'s the internet?',
   //   type: 'info',
@@ -64,10 +66,16 @@ module.exports = function(state = initialState, action) {
       return {
         ...state,
         sidebarOpen: !!action.open,
-        fixBody: !!action.open
-      }
+        fixBody: !!action.open,
+        showAddFrameInput: false
+      };
     }
-
+    case UPDATE_PAIR_UI_STATE: {
+      return {
+        ...state,
+        showAddFrameInput: !!action.open
+      };
+    }
     case LOGIN_SUCCESS:
     case CREATE_ACCOUNT_SUCCESS:
     case CREATE_ARTWORK_SUCCESS:

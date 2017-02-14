@@ -20,6 +20,9 @@
   @include align-items(center);
   &__thumb {
     float: left;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
     margin: 10px 10px 10px 0;
     height: 36px;
     width: 36px;
@@ -34,6 +37,34 @@
       border: 1px solid $of-normal-grey;
       background-color: $of-darkest-grey;
     }
+
+    &--add {
+      border: none;
+      background-color: lighten($of-dark-grey, 5%);
+    }
+
+  }
+
+  &__thumb-icon {
+    font-size: 33px;
+    color: $of-dark-grey;
+  }
+
+  &--add {
+    margin-left: 14px;
+
+    .frame-item__name {
+      text-transform: none;
+      color: #999;
+    }
+
+    .pairing-input {
+      border: none;
+      color: $of-dark-grey;
+      padding: 5px;
+      font-size: 16px;
+    }
+
   }
   &__info {
     position: relative;

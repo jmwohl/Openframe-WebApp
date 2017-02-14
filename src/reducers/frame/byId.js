@@ -5,6 +5,7 @@
  */
 import {
   FETCH_FRAMES_SUCCESS,
+  PAIR_FRAME_SUCCESS,
   FRAME_UPDATED,
   UPDATE_FRAME_MANAGERS_SUCCESS,
   DELETE_FRAME_SUCCESS,
@@ -18,6 +19,7 @@ export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_FRAMES_SUCCESS:
     case UPDATE_FRAME_MANAGERS_SUCCESS:
+    case PAIR_FRAME_SUCCESS:
     case FRAME_UPDATED: {
       return {
         ...state,
