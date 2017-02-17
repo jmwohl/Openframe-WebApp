@@ -36,6 +36,17 @@ const frames = {
    * @return {Promise}
    */
   update: function(frameId, frameData) {
+
+    // this is a bit of a hack, but if we're being strict on the back end
+    // we can't include these relation properties in the request
+    // Loopback used to have an 'ignore' option, but no longer does...
+    if (frameData && frameData.managers) {
+        delete frameData.managers;
+    }
+    if (frameData && frameData.owner) {
+        delete frameData.owner;
+    }
+
     return fetchJSON(`${modelPrefix}/${frameId}`, { method: 'PATCH', data: frameData });
   },
 

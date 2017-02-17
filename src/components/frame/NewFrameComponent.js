@@ -29,9 +29,15 @@ class NewFrameComponent extends React.Component {
           </div>
 
             { this.props.showAddFrameInput
-              ? <div>
-                  <input ref={(input) => { this.pairingInput = input; }} autoFocus className="pairing-input" type="text" placeholder="Pairing code" />
-                  <button className="pairing-submit btn" onClick={::this.pairFrame}>Pair</button>
+              ? <div className="pairing">
+                  <input
+                    ref={(input) => { this.pairingInput = input; }}
+                    autoFocus
+                    className="pairing__input"
+                    type="text"
+                    placeholder="Pairing code"
+                    onKeyDown={event => { if (event.keyCode === 13) ::this.pairFrame(); }} />
+                  <button className="pairing__submit btn" onClick={::this.pairFrame}>Pair</button>
                 </div>
               : <div className="frame-item__info">
                   <div className="frame-item__name">

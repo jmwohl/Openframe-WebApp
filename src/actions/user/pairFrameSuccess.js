@@ -1,6 +1,7 @@
 import {PAIR_FRAME_SUCCESS} from './../const';
 import selectFrame from '../frame/selectFrame';
 import frameUpdated from '../frame/frameUpdated';
+import editFrameSettings from '../frame/editFrameSettings';
 import updatePairUiState from '../ui/updatePairUiState';
 import { bindEventToAction } from '../../services/pubsub';
 import { normalize } from 'normalizr';
@@ -22,5 +23,6 @@ module.exports = function(response) {
     dispatch(notifSend(notification));
     dispatch(selectFrame(frame.id));
     dispatch(updatePairUiState(false));
+    dispatch(editFrameSettings(frame.id));
   }
 };

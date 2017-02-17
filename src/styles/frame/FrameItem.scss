@@ -58,11 +58,25 @@
       color: #999;
     }
 
-    .pairing-input {
-      border: none;
-      color: $of-dark-grey;
-      padding: 5px;
-      font-size: 16px;
+    .pairing {
+      @include display-flex();
+      @include align-items(center);
+      @include justify-content(center);
+
+      &__input {
+        border: none;
+        color: $of-dark-grey;
+        padding: 5px;
+        font-size: 16px;
+        height: 39px;
+        border-radius: 4px;
+        outline: none;
+      }
+      &__submit {
+        height: 39px;
+        margin-left: 5px;
+        color: black;
+      }
     }
 
   }

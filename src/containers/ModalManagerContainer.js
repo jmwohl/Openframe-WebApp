@@ -48,10 +48,10 @@ class ModalManagerContainer extends Component {
       actions.updateFrameFailure('Frame name is required.');
       return;
     }
-    actions.updateFrameRequest(settingsFrameId, fields);
     if (fields.managers) {
       actions.updateFrameManagersRequest(settingsFrameId, fields.managers.map(manager => manager.label))
     }
+    actions.updateFrameRequest(settingsFrameId, fields);
   }
 
   _handleRequestPasswordReset(fields) {
