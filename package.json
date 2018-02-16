@@ -79,6 +79,7 @@
     "css-loader": "^0.23.1",
     "faye": "^1.1.2",
     "file-loader": "^0.8.5",
+    "glslCanvas": "0.0.25",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.13.1",
     "moment": "^2.14.1",
